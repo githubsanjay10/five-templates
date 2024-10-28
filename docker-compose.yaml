@@ -1,0 +1,43 @@
+version: '3.0'
+services:
+  httpd-service-1:
+    build:
+      context: ./artxibition
+    ports:
+      - 81:80
+    volumes:
+      - artxibition-data:/usr/local/apache2/htdocs
+  httpd-service-2:
+    build:
+      context: ./character
+    ports:
+      - 82:80
+    volumes:
+      - character-data:/usr/local/apache2/htdocs
+  httpd-service-3:
+    build:
+      context: ./flight
+    ports:
+      - 83:80
+    volumes:
+      - flight-data:/usr/local/apache2/htdocs
+  httpd-service-4:
+    build:
+      context: ./gym
+    ports:
+      - 84:80
+    volumes:
+      - gym-data:/usr/local/apache2/htdocs
+  httpd-service-5:
+    build:
+      context: ./health
+    ports:
+      - 85:80
+    volumes:
+      - health-data:/usr/local/apache2/htdocs
+volumes:
+  artxibition-data:
+  character-data:
+  flight-data:
+  gym-data:
+  health-data:

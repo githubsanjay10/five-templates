@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  httpd-services:
+    build: .
+    ports:
+      - 90:80
+    volumes:
+      - health-vol:/usr/local/apache2/htdocs
+volumes:
+  health-vol:
